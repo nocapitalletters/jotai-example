@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import GamesList from './components/list';
+import AddGameButton from './components/button';
+import { Provider } from 'jotai'
+import NewGameInput from './components/new-game-input';
+import NewGameText from './components/new-game-text';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Provider>
+        <GamesList />
+        <h1>Add new game:</h1>
+        <NewGameInput />
+        <NewGameText />
+        <AddGameButton />
+      </Provider>
   );
 }
 
