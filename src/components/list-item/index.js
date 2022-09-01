@@ -1,11 +1,9 @@
-import { useAtom } from "jotai";
 import { gamesAtomConfig } from "../../atoms/atoms";
 import { deleteAtomFromArrayAtom } from "../../atoms/helper-functions";
 
 const ListItem = ({ gameAtomConfig }) => {
 
-    const [gameAtom, setGameAtom] = useAtom(gameAtomConfig);
-    const [gamesAtom, setGamesAtom] = useAtom(gamesAtomConfig);
+    const {gameAtom, gamesAtom} = importAtoms([gameAtomConfig,'gameAtom'], [gamesAtomConfig,'gamesAtom']);
 
     const deleteGame = () => {
         deleteAtomFromArrayAtom(gameAtomConfig, gamesAtom, setGamesAtom);
